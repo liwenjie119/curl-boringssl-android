@@ -9,7 +9,7 @@ PATH=$TOOLCHAIN/bin:$PATH
 # arm64
 export TARGET_HOST=aarch64-linux-android
 export ZLIB_DIR=$PWD/../zlib/build/arm64-v8a
-./Configure android-arm64 no-shared \
+./Configure android-arm64 no-shared zlib \
  -D__ANDROID_API__=$MIN_SDK_VERSION \
  --prefix=$PWD/build/arm64-v8a \
  --with-zlib-include=$ZLIB_DIR/include \
@@ -24,7 +24,7 @@ cp -R $PWD/build/arm64-v8a ../build/openssl/
 # arm
 export TARGET_HOST=armv7a-linux-androideabi
 export ZLIB_DIR=$PWD/../zlib/build/armeabi-v7a
-./Configure android-arm no-shared \
+./Configure android-arm no-shared zlib \
  -D__ANDROID_API__=$MIN_SDK_VERSION \
  --prefix=$PWD/build/armeabi-v7a \
  --with-zlib-include=$ZLIB_DIR/include \
@@ -39,7 +39,7 @@ cp -R $PWD/build/armeabi-v7a ../build/openssl/
 # x86
 export TARGET_HOST=i686-linux-android
 export ZLIB_DIR=$PWD/../zlib/build/x86
-./Configure android-x86 no-shared \
+./Configure android-x86 no-shared zlib \
  -D__ANDROID_API__=$MIN_SDK_VERSION \
  --prefix=$PWD/build/x86 \
  --with-zlib-include=$ZLIB_DIR/include \
@@ -54,7 +54,7 @@ cp -R $PWD/build/x86 ../build/openssl/
 # x64
 export TARGET_HOST=x86_64-linux-android
 export ZLIB_DIR=$PWD/../zlib/build/x86_64
-./Configure android-x86_64 no-shared \
+./Configure android-x86_64 no-shared zlib \
  -D__ANDROID_API__=$MIN_SDK_VERSION \
  --prefix=$PWD/build/x86_64 \
  --with-zlib-include=$ZLIB_DIR/include \

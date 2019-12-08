@@ -1,17 +1,18 @@
 #!/bin/bash
 
-# Set up Android NDK
-NDK=r20b
-echogreen "Fetching Android NDK $NDK"
-[ -f "android-ndk-$NDK-linux-x86_64.zip" ] || wget https://dl.google.com/android/repository/android-ndk-$NDK-linux-x86_64.zip
-[ -d "android-ndk-$NDK" ] || unzip -qo android-ndk-$NDK-linux-x86_64.zip
-
 # Get latest certs
 [ -f "cacert.pm" ] || curl --remote-name --time-cond cacert.pem https://curl.haxx.se/ca/cacert.pem
 
+NDK=r20b
 export ANDROID_NDK_HOME=`pwd`/android-ndk-$NDK
 export HOST_TAG=linux-x86_64
 export MIN_SDK_VERSION=21
+
+# Set up Android NDK
+echo "Fetching Android NDK $NDK"
+[ -f "android-ndk-$NDK-$HOST_TAG.zip" ] || wget https://dl.google.com/android/repository/android-ndk-$NDK-$HOST_TAG.zip
+[ -d "android-ndk-$NDK" ] || unzip -qo android-ndk-$NDK-$HOST_TAG.zip
+
 if [ -f /proc/cpuinfo ]; then
   export JOBS=$(grep flags /proc/cpuinfo | wc -l)
 elif [ ! -z $(which sysctl) ]; then
