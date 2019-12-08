@@ -10,7 +10,7 @@ And also necessary `autoconf` and `libtool` toolchains.
 
 ## Download
 
-If you do not want to compile them yourself, you can download pre-compiled static libraries from [releases](https://github.com/robertying/openssl-curl-android/releases). They are in `build.tar.gz`.
+If you do not want to compile them yourself, you can download pre-compiled static libraries from [releases](https://github.com/Zackptg5/openssl-curl-android/releases). They are in `build.tar.gz`.
 
 Doing your own compilation is recommended, since the pre-compiled binary can become outdated soon.
 
@@ -19,10 +19,10 @@ Update git submodules to compile newer versions of the libraries.
 ## Usage
 
 ```bash
-git clone https://github.com/robertying/openssl-curl-android.git
+git clone https://github.com/Zackptg5/openssl-curl-android.git
 git submodule update --init --recursive
 
-export ANDROID_NDK_HOME=your_android_ndk_bundle_root_here
+NDK=android_ndk_version_you_want_to_use
 export HOST_TAG=see_this_table_for_info # https://developer.android.com/ndk/guides/other_build_systems#overview
 export MIN_SDK_VERSION=21 # or any version you want
 
@@ -54,3 +54,7 @@ You can download and copy [cacert.pem](https://curl.haxx.se/docs/caextract.html)
 ## Working Example
 
 Checkout this [repo](https://github.com/robertying/CampusNet-Android/blob/master/app/src/main/cpp/jni) to see how to integrate compiled static libraries into an existing Android project, including `Android.mk` setup and `JNI` configurations.
+
+## Credits of Originality:
+
+This is a fork of the original here: https://github.com/robertying/openssl-curl-android

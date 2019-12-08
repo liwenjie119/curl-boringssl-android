@@ -1,2 +1,4 @@
 build/
+android-ndk-*
+cacert.pem
 .DS_Store

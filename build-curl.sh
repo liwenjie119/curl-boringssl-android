@@ -25,18 +25,14 @@ export SSL_DIR=$PWD/../openssl/build/arm64-v8a
             --disable-verbose \
             --disable-manual \
             --disable-crypto-auth \
-            --disable-unix-sockets \
             --disable-ares \
             --disable-rtsp \
-            --disable-ipv6 \
             --disable-proxy \
             --disable-versioned-symbols \
             --enable-hidden-symbols \
             --without-libidn \
             --without-librtmp \
-            --without-zlib \
             --disable-dict \
-            --disable-file \
             --disable-ftp \
             --disable-ftps \
             --disable-gopher \
@@ -51,7 +47,7 @@ export SSL_DIR=$PWD/../openssl/build/arm64-v8a
             --disable-telnet \
             --disable-tftp
 
-make -j4
+make -j$JOBS
 make install
 make clean
 mkdir -p ../build/curl/arm64-v8a
@@ -78,18 +74,14 @@ export SSL_DIR=$PWD/../openssl/build/armeabi-v7a
             --disable-verbose \
             --disable-manual \
             --disable-crypto-auth \
-            --disable-unix-sockets \
             --disable-ares \
             --disable-rtsp \
-            --disable-ipv6 \
             --disable-proxy \
             --disable-versioned-symbols \
             --enable-hidden-symbols \
             --without-libidn \
             --without-librtmp \
-            --without-zlib \
             --disable-dict \
-            --disable-file \
             --disable-ftp \
             --disable-ftps \
             --disable-gopher \
@@ -104,7 +96,7 @@ export SSL_DIR=$PWD/../openssl/build/armeabi-v7a
             --disable-telnet \
             --disable-tftp
 
-make -j4
+make -j$JOBS
 make install
 make clean
 mkdir -p ../build/curl/armeabi-v7a
@@ -131,18 +123,14 @@ export SSL_DIR=$PWD/../openssl/build/x86
             --disable-verbose \
             --disable-manual \
             --disable-crypto-auth \
-            --disable-unix-sockets \
             --disable-ares \
             --disable-rtsp \
-            --disable-ipv6 \
             --disable-proxy \
             --disable-versioned-symbols \
             --enable-hidden-symbols \
             --without-libidn \
             --without-librtmp \
-            --without-zlib \
             --disable-dict \
-            --disable-file \
             --disable-ftp \
             --disable-ftps \
             --disable-gopher \
@@ -157,7 +145,7 @@ export SSL_DIR=$PWD/../openssl/build/x86
             --disable-telnet \
             --disable-tftp
 
-make -j4
+make -j$JOBS
 make install
 make clean
 mkdir -p ../build/curl/x86
@@ -184,18 +172,14 @@ export SSL_DIR=$PWD/../openssl/build/x86_64
             --disable-verbose \
             --disable-manual \
             --disable-crypto-auth \
-            --disable-unix-sockets \
             --disable-ares \
             --disable-rtsp \
-            --disable-ipv6 \
             --disable-proxy \
             --disable-versioned-symbols \
             --enable-hidden-symbols \
             --without-libidn \
             --without-librtmp \
-            --without-zlib \
             --disable-dict \
-            --disable-file \
             --disable-ftp \
             --disable-ftps \
             --disable-gopher \
@@ -210,7 +194,7 @@ export SSL_DIR=$PWD/../openssl/build/x86_64
             --disable-telnet \
             --disable-tftp
 
-make -j4
+make -j$JOBS
 make install
 make clean
 mkdir -p ../build/curl/x86_64
