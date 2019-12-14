@@ -1,12 +1,14 @@
-# openssl-curl-android
+# curl-boringssl-android
 
-Compiles curl (and dependencies - zlib, openssl ) for Android
+Compiles curl (and dependencies ) for Android
+
+Dynamic linking (default) has most features, static has some removed due to various issues/incompatibilities
 
 ## Prerequisites
 
 Linux
 
-And also necessary `autoconf` and `libtool` toolchains.
+autoconf,libtool,go,ninja
 
 ## Download
 
@@ -32,6 +34,8 @@ Edit build.sh script:
 NDK=android_ndk_version_you_want_to_use
 export HOST_TAG=see_this_table_for_info # https://developer.android.com/ndk/guides/other_build_systems#overview
 export MIN_SDK_VERSION=21 # or any version you want (dependent on the ndk version - keep 21 if in doubt)
+export STATIC=false #Change to true for static binary - note that there will be less features then with dynamic
+export ARCH="arm arm64 x86 x64" # Remove ones you don't want to compile
 ```
 chmod +x ./build.sh
 ./build.sh
@@ -42,12 +46,7 @@ All compiled libs are located in `build` directory.
 
 Change scripts' configure arguments to meet your requirements.
 
-For now, using tls (https) in Android would throw `peer verification failed`.
-
-If using libcurl, explicitly set `curl_easy_setopt(curl, CURLOPT_CAINFO, CA_BUNDLE_PATH);` where `CA_BUNDLE_PATH` is your ca-bundle in the device storage.
-If using curl binary, change the --with-ca-bundle flag in build-curl.sh to the path/name of the cacert file you'll be placing
-
-You can download and copy [cacert.pem](https://curl.haxx.se/docs/caextract.html) to the internal storage to get tls working for libcurl.
+Note that https has been fixed now in Android so the `peer verification failed` message no longer occurs. The solution was to set `--with-ca-path=/system/etc/security/cacerts` configure flag and to use boringssl instead of openssl
 
 ## Working Example
 

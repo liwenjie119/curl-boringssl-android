@@ -1,4 +1,9 @@
-build/
+build*
 android-ndk-*
 cacert.pem
 .DS_Store
+curl-*
+gettext*
+libiconv*
+libidn2*
+libunistring*
