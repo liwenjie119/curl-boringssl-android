@@ -14,7 +14,7 @@ on:
   #  - cron: 0 20 * * *
    push:
      branches: 
-       - Testing
+       - master
 
 jobs:
   build:
