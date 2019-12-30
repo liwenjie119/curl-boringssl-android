@@ -59,7 +59,7 @@ Note that https has been fixed now in Android so the `peer verification failed` 
 
 ## Issues
 
-Curl has weird DNS error in Android Q
+Curl has weird DNS error in Android Q when not run as superuser
 
 ## Working Example
 
