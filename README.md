@@ -59,7 +59,7 @@ Note that https has been fixed now in Android so the `peer verification failed` 
 
 ## Issues
 
-Dynamic linked curl has weird DNS error in Android Q
+Curl has weird DNS error in Android Q
 
 ## Working Example
 
