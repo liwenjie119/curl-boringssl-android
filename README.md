@@ -57,6 +57,10 @@ Change scripts' configure arguments to meet your requirements.
 
 Note that https has been fixed now in Android so the `peer verification failed` message no longer occurs. The solution was to set `--with-ca-path=/system/etc/security/cacerts` configure flag and to use boringssl instead of openssl
 
+## Issues
+
+Dynamic linked curl has weird DNS error in Android Q
+
 ## Working Example
 
 Checkout this [repo](https://github.com/robertying/CampusNet-Android/blob/master/app/src/main/cpp/jni) to see how to integrate compiled static libraries into an existing Android project, including `Android.mk` setup and `JNI` configurations.
