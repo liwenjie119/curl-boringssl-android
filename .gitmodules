@@ -32,3 +32,6 @@
 [submodule "openssl"]
 	path = openssl
 	url = https://github.com/openssl/openssl
+[submodule "busybox"]
+	path = busybox
+	url = https://github.com/mirror/busybox
