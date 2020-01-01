@@ -67,7 +67,7 @@ jobs:
       - name: Assemble artifact
         run: |
           ls -l
-          ls build
+          ls build/curl
           rm -rf ./artifact/
           mkdir -p ./artifact/
           cp -r build ./artifact
