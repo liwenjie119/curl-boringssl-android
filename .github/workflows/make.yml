@@ -70,8 +70,8 @@ jobs:
           ls build
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          cp -r build/ ./artifact/
-          cp ./busybox/_install/bin/busybox ./artifact/busybox
+          cp -r build ./artifact
+          cp busybox/_install/bin/busybox ./artifact/busybox
           
       - name: Upload artifact
         uses: actions/upload-artifact@master
