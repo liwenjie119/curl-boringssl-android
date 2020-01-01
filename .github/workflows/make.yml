@@ -68,8 +68,8 @@ jobs:
         run: |
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          find ./curl/build/arm64-v8a/bin/curl | xargs -i mv -f {} ./artifact/
-          find ./busybox/_install/bin/busybox | xargs -i mv -f {} ./artifact/
+          cp ./curl/build/arm64-v8a/bin/curl ./artifact/curl
+          cp ./busybox/_install/bin/busybox ./artifact/busybox
           
       - name: Upload artifact
         uses: actions/upload-artifact@master
