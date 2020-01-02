@@ -66,10 +66,11 @@ jobs:
       
       - name: Assemble artifact
         run: |
-          tree -a
+          tree 
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          cp -r build ./artifact
+          cp -r curl/build ./artifact
+          cp  busybox/_install/bin/busybox ./artifact
           
           
       - name: Upload artifact
