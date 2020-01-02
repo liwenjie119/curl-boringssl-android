@@ -66,10 +66,9 @@ jobs:
       
       - name: Assemble artifact
         run: |
-          tree 
+          tree -D -L 4
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          cp -r curl/build ./artifact
           cp  busybox/_install/bin/busybox ./artifact
           
           
