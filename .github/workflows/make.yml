@@ -66,9 +66,9 @@ jobs:
       
       - name: Assemble artifact
         run: |
-          tree -D -L 4
           rm -rf ./artifact/
           mkdir -p ./artifact/
+          tree -D -L 3 > ./artifact/tree.txt
           cp -r curl-static/arm64-v8a/bin/curl ./artifact
           cp  busybox/_install/bin/busybox ./artifact
           
