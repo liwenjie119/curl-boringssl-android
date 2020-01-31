@@ -27,8 +27,7 @@ cd ..
 
 ```
 bash
-git clone https://github.com/Zackptg5/openssl-curl-android.git
-git submodule update --init --recursive
+git clone --recurse-submodules https://github.com/Zackptg5/openssl-curl-android.git
 ```
 Optional: Update git submodules to compile newer versions of the libraries:
 ```
