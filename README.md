@@ -12,8 +12,7 @@ autoconf,libtool,go,ninja
 
 ## Download
 
-If you do not want to compile them yourself, you can download pre-compiled static binaries from [Unity-Addons External-Tools](https://github.com/Zackptg5/Unity-Addons/tree/master/External-Tools).<br/>
-Dynamic ones with required libs can be [found here](https://github.com/Zackptg5/Curl-For-Android) in this unity mod. Just zip the contents of it and flash.<br/>
+If you do not want to compile them yourself, you can download pre-compiled static binaries from [Cross-Compiled-Binaries-Android](https://github.com/Zackptg5/Cross-Compiled-Binaries-Android).<br/>
 Doing your own compilation is recommended, since the pre-compiled binary can become outdated soon.<br/>
 
 Update git submodules to compile newer versions of the libraries:
