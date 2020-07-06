@@ -55,9 +55,9 @@ jobs:
         run: |
             ./busybox.sh
 
-      #- name: update Commits
-       # run: |
-          #./update.sh
+      - name: update Commits
+        run: |
+          ./update.sh
             
       - name: make curl
         run: ./build.sh
