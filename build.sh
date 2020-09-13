@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NDK=r20b
+NDK=r21d
 export ANDROID_NDK_HOME=$PWD/android-ndk-$NDK
 export HOST_TAG=linux-x86_64
 export MIN_SDK_VERSION=21
