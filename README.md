@@ -6,7 +6,7 @@ Dynamic linking (default) has most features, static has some removed due to vari
 
 ## Prerequisites
 
-Linux
+Linux (I've tested this on Manjaro)
 
 autoconf,libtool,go,ninja
 
