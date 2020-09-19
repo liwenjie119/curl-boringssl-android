@@ -240,9 +240,9 @@ for BIN in $MODULES; do
                       # ldap - openldap won't compile
                       # sspi - windows only
         fi
-        #cp -f $DIR/local-configure.patch .
-        #sed -i "s/<TARGET_HOST>/$(echo $TARGET_HOST | sed "s/-linux/-unknown-linux/")/" local-configure.patch
-        #patch -p1 --no-backup-if-mismatch < local-configure.patch
+        cp -f $DIR/local-configure.patch .
+        sed -i "s/<TARGET_HOST>/$(echo $TARGET_HOST | sed "s/-linux/-unknown-linux/")/" local-configure.patch
+        patch -p1 --no-backup-if-mismatch < local-configure.patch
         ;;
     esac
 

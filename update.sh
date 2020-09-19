@@ -24,9 +24,6 @@ git pull
 cd ../nghttp2
 git checkout master
 git pull
-cd ../quiche
-git checkout master
-git pull
 cd ../zlib
 git checkout develop
 git pull
