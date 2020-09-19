@@ -8,7 +8,11 @@ Dynamic linking (default) has most features, static has some removed due to vari
 
 Linux (I've tested this on Manjaro)
 
-autoconf,libtool,go,ninja
+
+for Ubuntu
+
+sudo apt install -y cmake autoconf libtool go ninja-build
+ln -s /usr/bin/ninja /usr/bin/ninja-build
 
 ## Download
 
