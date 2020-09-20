@@ -10,11 +10,14 @@
 name: Build my curl and busybox
 
 on:
-  #schedule:
-  #  - cron: 0 20 * * *
-   push:
-     branches: 
-       - master
+  push:
+    branches: 
+      - master
+  schedule:
+    - cron: 0 1 * * SAT
+  watch:
+    types: started
+
 
 jobs:
   build:
@@ -61,9 +64,9 @@ jobs:
         run: |
           ./update.sh
           
-      #- name: make busybox
-      #  run: |
-      #      ./busybox.sh
+      - name: make busybox
+        run: |
+            ./busybox.sh
             
       - name: make curl
         run: ./build.sh
