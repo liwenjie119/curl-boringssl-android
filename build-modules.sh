@@ -194,6 +194,7 @@ for BIN in $MODULES; do
                       --target=$TARGET_HOST \
                       --prefix=$PREFIX \
                       --with-ssl=$BSSL_DIR \
+                      --with-ca-bundle=/system/etc/security/cacert.pem \
                       --with-ca-path=/system/etc/security/cacerts \
                       --with-zlib=$ZLIB_DIR \
                       --with-brotli=$BROT_DIR \
