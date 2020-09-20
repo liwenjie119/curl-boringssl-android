@@ -28,7 +28,7 @@ cd ../zlib
 git checkout develop
 git pull
 cd ../busybox
-git checkout develop
+git checkout master
 git pull
 cd ..
 
