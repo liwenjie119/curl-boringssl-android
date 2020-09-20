@@ -37,6 +37,8 @@ jobs:
           sudo -E apt-get update
           sudo -E apt-get -y install tree  build-essential asciidoc autoconf libtool  binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint  golang device-tree-compiler bc ninja-build cmake
           sudo -E ln -s /usr/bin/ninja /usr/bin/ninja-build
+          ulimit -n 40960
+          ulimit -a
           #wget https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
           #sudo -E unzip ninja-linux.zip -d /usr/local/bin/
           #sudo -E update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 

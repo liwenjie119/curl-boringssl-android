@@ -3,7 +3,7 @@
 # Setting up from source is stupid with these
 for i in libunistring-latest libiconv-1.16 libidn2-latest gettext-0.20.1; do
   j="$(echo $i | sed "s/-.*//")"
-  [ -f $j.tar.gz ] || { [ "$j" == "libidn2" ] && wget -O $j.tar.gz http://mirrors.kernel.org/gnu/libidn/$i.tar.gz || wget -O $j.tar.gz http://mirrors.kernel.org/gnu/$j/$i.tar.gz; }
+  [ -f $j.tar.gz ] || { [ "$j" == "libidn2" ] && wget -q -O $j.tar.gz http://mirrors.kernel.org/gnu/libidn/$i.tar.gz || wget -q -O $j.tar.gz http://mirrors.kernel.org/gnu/$j/$i.tar.gz; }
   [ -d $j ] || { tar -xf $j.tar.gz; mv -f $j-* $j; }
 done
 
