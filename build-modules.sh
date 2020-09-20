@@ -185,6 +185,7 @@ for BIN in $MODULES; do
                     --enable-lib-only
                     ;;
       "curl")
+        cp ../cacert.pem cacert.pem
         sed -i "s/\[unreleased\]/$(date +"%Y-%m-%d")/" include/curl/curlver.h
         sed -i "s/Release-Date/Build-Date/g" src/tool_help.c
         ./buildconf
