@@ -35,7 +35,7 @@ jobs:
       - name: update software
         run: |
           sudo -E apt-get update
-          sudo -E apt-get -y install tree  build-essential asciidoc autoconf libtool  binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint  golang device-tree-compiler bc niaja-build cmake
+          sudo -E apt-get -y install tree  build-essential asciidoc autoconf libtool  binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint  golang device-tree-compiler bc ninja-build cmake
           ln -s /usr/bin/ninja /usr/bin/ninja-build
           #wget https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
           #sudo -E unzip ninja-linux.zip -d /usr/local/bin/
@@ -64,18 +64,16 @@ jobs:
         run: ./build.sh
         
 
-      
       - name: Assemble artifact
         run: |
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          tree -D -L 3 > ./artifact/tree.txt
-          cp -r curl-static/arm64-v8a/bin/curl ./artifact
-          cp  busybox/_install/bin/busybox ./artifact
+          find ./curl-static/arm64-v8a/bin/curl | xargs -i mv -f {} ./artifact/
+          find ./build/busybox/bin/busybox | xargs -i mv -f {} ./artifact/
           
           
       - name: Upload artifact
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@main
         with:
           name: curl and busybox
           path: ./artifact/
