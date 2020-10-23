@@ -1,37 +1,37 @@
-[submodule "curl"]
-	path = curl
-	url = https://github.com/curl/curl.git
-	ignore = dirty
-[submodule "zlib"]
-	path = zlib
-	url = https://github.com/madler/zlib
-[submodule "libssh2"]
-	path = libssh2
-	url = https://github.com/libssh2/libssh2
 [submodule "boringssl"]
 	path = boringssl
 	url = https://boringssl.googlesource.com/boringssl
 [submodule "brotli"]
 	path = brotli
 	url = https://github.com/google/brotli
-[submodule "libmetalink"]
-	path = libmetalink
-	url = https://github.com/metalink-dev/libmetalink
-[submodule "libexpat"]
-	path = libexpat
-	url = https://github.com/libexpat/libexpat
-[submodule "nghttp2"]
-	path = nghttp2
-	url = https://github.com/nghttp2/nghttp2
+[submodule "busybox"]
+	path = busybox
+	url = https://github.com/mirror/busybox	
 [submodule "c-ares"]
 	path = c-ares
 	url = https://github.com/c-ares/c-ares
+[submodule "curl"]
+	path = curl
+	url = https://github.com/curl/curl.git
+	ignore = dirty
+[submodule "libexpat"]
+	path = libexpat
+	url = https://github.com/libexpat/libexpat
+[submodule "libmetalink"]
+	path = libmetalink
+	url = https://github.com/metalink-dev/libmetalink
 [submodule "libpsl"]
 	path = libpsl
 	url = https://github.com/rockdaboot/libpsl
+[submodule "libssh2"]
+	path = libssh2
+	url = https://github.com/libssh2/libssh2
+[submodule "nghttp2"]
+	path = nghttp2
+	url = https://github.com/nghttp2/nghttp2
 [submodule "openssl"]
 	path = openssl
 	url = https://github.com/openssl/openssl
-[submodule "busybox"]
-	path = busybox
-	url = https://github.com/mirror/busybox
+[submodule "zlib"]
+	path = zlib
+	url = https://github.com/madler/zlib
