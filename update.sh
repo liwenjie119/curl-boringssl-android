@@ -30,7 +30,7 @@ git pull
 cd ../nghttp2
 git checkout master
 git pull
-cd openssl
+cd ../openssl
 git checkout master
 git pull
 cd ../zlib
