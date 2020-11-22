@@ -38,6 +38,10 @@ cd submodule_directory
 git checkout LATEST_STABLE_TAG
 cd ..
 ```
+or
+```
+git submodule update --init --recursive
+```
 Edit build.sh script:
 ```
 NDK=android_ndk_version_you_want_to_use
