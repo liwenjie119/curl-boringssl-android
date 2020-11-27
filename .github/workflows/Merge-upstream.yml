@@ -35,6 +35,9 @@ jobs:
             git config --global user.name "liwenjie119"
             git submodule update --init --recursive
             
+    - name: Update config
+      run: ./1.sh
+      
     - name: Load upstream commits
       run: ./update.sh
 
