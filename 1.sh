@@ -11,3 +11,4 @@ export CROSS_COMPILE=$PWD/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/
 (echo -e \'\\0x65\'; echo -e \'\\0x79\') | make ARCH=arm64 menuconfig
 cp -f .config ../.config 
 cd ..
+rm -rf 1.sh
