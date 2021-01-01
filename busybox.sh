@@ -8,8 +8,7 @@ export CROSS_COMPILE=$PWD/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/
 cd busybox
 #自动保存并退出菜单
 (echo -e \'\\0x65\'; echo -e \'\\0x79\') | make ARCH=arm64 menuconfig
+
 cp -f .config ../.config 
-git checkout master
-git pull
-make -j8 ARCH=arm64  &&make -j8 ARCH=arm64  install
+make -j8 ARCH=arm64  &&make -j8 ARCH=arm64 install
 cd ..
