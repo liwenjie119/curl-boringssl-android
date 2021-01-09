@@ -50,11 +50,6 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
  
-    - name: test
-      run: |
-            #sudo apt -yqq install xterm&&resize -s 40 200
-            stty columns 50
-            stty rows 200
 
  
     - name: Update config
