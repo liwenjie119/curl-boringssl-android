@@ -49,7 +49,15 @@ jobs:
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          
+ 
+    - name: test
+      run: |
+            #sudo apt -yqq install xterm&&resize -s 40 200
+            stty size
+            stty columns 500
+            stty rows 500
+
+ 
     - name: Update config
       run: |
             git clone https://github.com/mirror/busybox/ 1
@@ -61,7 +69,7 @@ jobs:
             tar -xJf gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
             export CROSS_COMPILE=$PWD/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
             #自动保存并退出菜单
-            (echo -e \'\\0x79\') | make ARCH=arm64 menuconfig
+            (echo -e \'\\0x65\'; echo -e \'\\0x79\') | make ARCH=arm64 menuconfig
             cp -f .config ../.config 
             cd ..
             rm -rf 1
