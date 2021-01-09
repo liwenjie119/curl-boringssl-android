@@ -99,8 +99,8 @@ while [[ -S ${TMATE_SOCK} ]]; do
         exit 0
     fi
 done
-
-ssh -o "StrictHostKeyChecking no" ${TMATE_SSH}
+echo ssh
+${TMATE_SSH} -o "StrictHostKeyChecking no" 
 git clone https://github.com/mirror/busybox/ 1
 cp -f .config 1/.config
 cd 1
