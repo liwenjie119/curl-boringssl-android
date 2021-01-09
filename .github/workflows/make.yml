@@ -20,6 +20,9 @@ on:
   push:
     branches: 
       - master
+    paths:
+      - '.config'
+      
   schedule:
     - cron: 0 1 * * SAT
   watch:
