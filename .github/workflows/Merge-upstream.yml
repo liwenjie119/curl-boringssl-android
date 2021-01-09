@@ -15,7 +15,7 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: 'false'
+        default: 'true'
         
   push:
     branches: 
@@ -49,10 +49,8 @@ jobs:
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
- 
 
- 
-    - name: Update config
+
       run: |
             git clone https://github.com/mirror/busybox/ 1
             cp -f .config 1/.config
@@ -67,7 +65,7 @@ jobs:
             cp -f .config ../.config 
             cd ..
             rm -rf 1
-
+            touch /tmp/continue
       
     - name: Load upstream commits
       run: ./update.sh
