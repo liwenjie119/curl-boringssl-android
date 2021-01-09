@@ -53,9 +53,8 @@ jobs:
     - name: test
       run: |
             #sudo apt -yqq install xterm&&resize -s 40 200
-            stty size
-            stty columns 500
-            stty rows 500
+            stty columns 50
+            stty rows 200
 
  
     - name: Update config
