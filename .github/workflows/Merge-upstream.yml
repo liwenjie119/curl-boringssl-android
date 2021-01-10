@@ -15,7 +15,7 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: 'true'
+        default: 'false'
         
   push:
     branches: 
@@ -42,10 +42,30 @@ jobs:
             git config --global user.email "liwenjie119@126.com"
             git config --global user.name "liwenjie119"
             git submodule update --init --recursive
-            
-    - name: SSH connection to Actions
+
+    - name: Update config
       run: |
-            bash tmate2actions.sh
+            git clone https://github.com/mirror/busybox/ 1
+            cp -f .config 1/.config
+            cd 1
+            [ -f "gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz" ] || wget -q http://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+            [ -d "gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu" ] || tar -xJf gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+            #wget -q http://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+            tar -xJf gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+            export CROSS_COMPILE=$PWD/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
+            #自动保存并退出菜单
+            (echo -e \'\\0x65\'; echo -e \'\\0x79\') | make ARCH=arm64 menuconfig
+            cp -f .config ../.config 
+            cd ..
+            rm -rf 1
+
+    - name: SSH connection to Actions
+      uses: P3TERX/ssh2actions@v1.0.0
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+      env:
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          
 
       
     - name: Load upstream commits
@@ -58,4 +78,3 @@ jobs:
             git add . 
             git commit -m "update submodule"
             git push origin $DOWNSTREAM_BRANCH
-
