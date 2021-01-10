@@ -3,7 +3,7 @@ git pull
 cd boringssl
 git checkout master
 git pull
-cd ../brotil
+cd ../brotli
 git checkout master
 git pull
 cd ../busybox

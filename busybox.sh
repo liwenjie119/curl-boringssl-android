@@ -7,7 +7,9 @@ tar -xJf gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
 export CROSS_COMPILE=$PWD/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
 cd busybox
 #自动保存并退出菜单
-(echo -e \'\\0x65\'; echo -e \'\\0x79\') | make ARCH=arm64 menuconfig
+
+#(echo -e \'\\0x65\'; echo -e \'\\0x79\') | make ARCH=arm64 menuconfig
+make ARCH=arm64 oldconfig
 
 cp -f .config ../.config 
 make -j8 ARCH=arm64  &&make -j8 ARCH=arm64 install
