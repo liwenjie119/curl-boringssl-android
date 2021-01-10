@@ -3,7 +3,7 @@
 NDK=r22
 export ANDROID_NDK_HOME=$PWD/android-ndk-$NDK
 export HOST_TAG=linux-x86_64
-export MIN_SDK_VERSION=29
+export MIN_SDK_VERSION=30
 export STATIC=true
 export ARCH="arm64"
 
