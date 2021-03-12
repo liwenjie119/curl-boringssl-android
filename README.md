@@ -11,9 +11,10 @@ Linux (I've tested this on Manjaro)
 
 for Ubuntu
 
-sudo apt install -y cmake autoconf libtool go ninja-build
-ln -s /usr/bin/ninja /usr/bin/ninja-build
-
+```
+sudo apt install -y cmake autoconf libtool golang-go ninja-build
+sudo ln -s /usr/bin/ninja /usr/bin/ninja-build
+```
 ## Download
 
 If you do not want to compile them yourself, you can download pre-compiled static binaries from [Cross-Compiled-Binaries-Android](https://github.com/Zackptg5/Cross-Compiled-Binaries-Android).<br/>
