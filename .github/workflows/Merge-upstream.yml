@@ -21,7 +21,7 @@ on:
     branches: 
       - master
   schedule:
-    - cron: 0 0 * * SAT
+    - cron: 0 10 * * TUES
 
 jobs:
   merge:
