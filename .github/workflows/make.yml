@@ -24,7 +24,7 @@ on:
       - '.config'
       
   schedule:
-    - cron: 0 10 * * TUES
+    - cron: 0 10 * * TUE
   watch:
     types: started
 
