@@ -1,6 +1,6 @@
 #!/bin/bash
 cp -f .config busybox/.config
-cp -f 0001-patch-for-resolving-domaain-name.patch busybox/0001-patch-for-resolving-domaain-name.patch 
+cp -f 0001-patch-for-resolving-domain-name.patch busybox/0001-patch-for-resolving-domaain-name.patch 
 [ -f "gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz" ] || wget -q http://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
 [ -d "gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu" ] || tar -xJf gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
 #wget -q http://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
