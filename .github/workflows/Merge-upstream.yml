@@ -43,12 +43,7 @@ jobs:
             git config --global user.name "liwenjie119"
             git submodule update --init --recursive
             
-    - name: SSH connection to Actions
-      uses: P3TERX/ssh2actions@v1.0.0
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-      env:
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
 
     - name: Update config
       run: |
@@ -65,12 +60,17 @@ jobs:
             make ARCH=arm64 oldconfig
             cp -f .config ../.config 
             cd ..
-            rm -rf 1
+            
           
-
+    - name: SSH connection to Actions
+      uses: P3TERX/ssh2actions@v1.0.0
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+      env:
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       
     - name: Load upstream commits
-      run: ./update.sh
+      run: rm -rf 1&&./update.sh
 
     - name: Push Commits
       env:
