@@ -70,7 +70,7 @@ jobs:
 
       
     - name: Load upstream commits
-      run: &&./update.sh
+      run: ./update.sh
 
     - name: Push Commits
       env:
